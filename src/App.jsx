@@ -53,7 +53,7 @@ function App() {
         <EducationalExperience onChange={handleChange} data={data} />
         <PracticalExperience onChange={handleChange} data={data} />
       </div>
-      <Preview></Preview>
+      <Preview data={data} />
     </div>
   );
 }

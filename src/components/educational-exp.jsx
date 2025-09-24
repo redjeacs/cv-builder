@@ -27,7 +27,7 @@ function EducationalExperience({ data, onChange }) {
       <div className="date-start-container">
         <label htmlFor="dateStart">Date Started</label>
         <input
-          type="date"
+          type="month"
           id="dateStart"
           value={data.education.dateStart}
           onChange={onChange}
@@ -52,7 +52,7 @@ function EducationalExperience({ data, onChange }) {
       <div className="date-end-container">
         <label htmlFor="dateEnd">Date Graduated</label>
         <input
-          type="date"
+          type="month"
           id="dateEnd"
           value={data.education.dateEnd}
           onChange={onChange}
