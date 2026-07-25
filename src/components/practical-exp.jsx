@@ -1,4 +1,4 @@
-function PracticalExperience({ data, onChange }) {
+function PracticalExperience({ data, onUpdate }) {
   return (
     <form className="section-container">
       <h2>Practical Experience</h2>
@@ -8,7 +8,7 @@ function PracticalExperience({ data, onChange }) {
           type="text"
           id="position"
           value={data.practical.position}
-          onChange={onChange}
+          onChange={(e) => onUpdate("practical", "position", e.target.value)}
           data-section="practical"
           placeholder="Front End Developer"
         />
@@ -19,7 +19,8 @@ function PracticalExperience({ data, onChange }) {
           type="text"
           id="company"
           value={data.practical.company}
-          onChange={onChange}
+          onChange={(e) => onUpdate("practical", "company", e.target.value)}
+          data-section="practical"
           placeholder="Company"
         />
       </div>
@@ -29,7 +30,9 @@ function PracticalExperience({ data, onChange }) {
           name="responsibilities"
           id="responsibilities"
           value={data.practical.responsibilities}
-          onChange={onChange}
+          onChange={(e) =>
+            onUpdate("practical", "responsibilities", e.target.value)
+          }
           data-section="practical"
           rows="5"
           placeholder="List your achievements within the company and your main responsibility."
@@ -41,7 +44,7 @@ function PracticalExperience({ data, onChange }) {
           type="date"
           id="dateStart"
           value={data.practical.dateStart}
-          onChange={onChange}
+          onChange={(e) => onUpdate("practical", "dateStart", e.target.value)}
           data-section="practical"
           placeholder="MM/YYYY"
         />
@@ -49,12 +52,15 @@ function PracticalExperience({ data, onChange }) {
       <div className="degree-status-container">
         <div>
           <p>Ongoing:</p>
-          <label className="switch" htmlFor="ongoing">
+          <label className="switch" htmlFor="practical-ongoing">
             <input
               type="checkbox"
-              id="ongoing"
+              id="practical-ongoing"
+              name="ongoing"
               checked={data.practical.ongoing}
-              onChange={onChange}
+              onChange={(e) =>
+                onUpdate("practical", "ongoing", e.target.checked)
+              }
               data-section="practical"
             />
             <span className="slider round"></span>
@@ -67,7 +73,7 @@ function PracticalExperience({ data, onChange }) {
           type="date"
           id="dateEnd"
           value={data.practical.dateEnd}
-          onChange={onChange}
+          onChange={(e) => onUpdate("practical", "dateEnd", e.target.value)}
           data-section="practical"
           placeholder="MM/YYYY"
         />

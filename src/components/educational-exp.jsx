@@ -1,4 +1,4 @@
-function EducationalExperience({ data, onChange }) {
+function EducationalExperience({ data, onUpdate }) {
   return (
     <form className="section-container">
       <h2>Educational Experience</h2>
@@ -8,7 +8,7 @@ function EducationalExperience({ data, onChange }) {
           type="text"
           id="schoolName"
           value={data.education.schoolName}
-          onChange={onChange}
+          onChange={(e) => onUpdate("education", "schoolName", e.target.value)}
           data-section="education"
           placeholder="Enter School/University"
         />
@@ -19,7 +19,7 @@ function EducationalExperience({ data, onChange }) {
           type="text"
           id="degree"
           value={data.education.degree}
-          onChange={onChange}
+          onChange={(e) => onUpdate("education", "degree", e.target.value)}
           data-section="education"
           placeholder="Degree"
         />
@@ -30,7 +30,7 @@ function EducationalExperience({ data, onChange }) {
           type="month"
           id="dateStart"
           value={data.education.dateStart}
-          onChange={onChange}
+          onChange={(e) => onUpdate("education", "dateStart", e.target.value)}
           data-section="education"
         />
       </div>
@@ -42,7 +42,9 @@ function EducationalExperience({ data, onChange }) {
               type="checkbox"
               id="ongoing"
               checked={data.education.ongoing}
-              onChange={onChange}
+              onChange={(e) =>
+                onUpdate("education", "ongoing", e.target.checked)
+              }
               data-section="education"
             />
             <span className="slider round"></span>
@@ -55,7 +57,7 @@ function EducationalExperience({ data, onChange }) {
           type="month"
           id="dateEnd"
           value={data.education.dateEnd}
-          onChange={onChange}
+          onChange={(e) => onUpdate("education", "dateEnd", e.target.value)}
           data-section="education"
           placeholder="MM/YYYY"
         />

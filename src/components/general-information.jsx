@@ -1,4 +1,4 @@
-function GeneralInformation({ onChange, data }) {
+function GeneralInformation({ onUpdate, data }) {
   return (
     <form className="section-container">
       <h2>General Information</h2>
@@ -9,7 +9,7 @@ function GeneralInformation({ onChange, data }) {
           id="fullName"
           value={data.general.fullName}
           placeholder="Billy Bob"
-          onChange={onChange}
+          onChange={(e) => onUpdate("general", "fullName", e.target.value)}
           data-section="general"
           required
         />
@@ -22,7 +22,7 @@ function GeneralInformation({ onChange, data }) {
           placeholder="example@mail.com"
           data-section="general"
           value={data.general.email}
-          onChange={onChange}
+          onChange={(e) => onUpdate("general", "email", e.target.value)}
           required
         />
       </div>
@@ -33,7 +33,7 @@ function GeneralInformation({ onChange, data }) {
           id="phone"
           data-section="general"
           value={data.general.phone}
-          onChange={onChange}
+          onChange={(e) => onUpdate("general", "phone", e.target.value)}
           placeholder="0912345678"
         />
       </div>
@@ -45,7 +45,7 @@ function GeneralInformation({ onChange, data }) {
           placeholder="City, Country"
           data-section="general"
           value={data.general.location}
-          onChange={onChange}
+          onChange={(e) => onUpdate("general", "location", e.target.value)}
           required
         />
       </div>

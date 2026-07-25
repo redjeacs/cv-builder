@@ -31,16 +31,12 @@ function App() {
     },
   });
 
-  const handleChange = (e) => {
-    const section = e.target.dataset.section;
-    const name = e.target.id;
-    const value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+  const updateField = (section, key, value) => {
     setData((prevData) => ({
       ...prevData,
       [section]: {
         ...prevData[section],
-        [name]: value,
+        [key]: value,
       },
     }));
   };
@@ -49,9 +45,9 @@ function App() {
     <div className="app">
       <div className="info-editor">
         <Header />
-        <GeneralInformation onChange={handleChange} data={data} />
-        <EducationalExperience onChange={handleChange} data={data} />
-        <PracticalExperience onChange={handleChange} data={data} />
+        <GeneralInformation onUpdate={updateField} data={data} />
+        <EducationalExperience onUpdate={updateField} data={data} />
+        <PracticalExperience onUpdate={updateField} data={data} />
       </div>
       <Preview data={data} />
     </div>

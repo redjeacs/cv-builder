@@ -170,6 +170,7 @@ input:checked + .slider:before {
 
 .preview {
   padding: 20px;
+  max-height: 100%;
 }
 
 .general-info-preview,
