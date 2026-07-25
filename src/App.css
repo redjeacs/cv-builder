@@ -10,6 +10,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Times New Roman", Times, serif;
+  background-color: black;
 }
 
 .app {
@@ -30,6 +31,7 @@ body {
   height: 100%;
   overflow: auto;
   border: 1px solid black;
+  background-color: white;
 
   &::-webkit-scrollbar {
     width: 5px;
